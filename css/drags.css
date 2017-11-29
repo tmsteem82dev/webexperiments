@@ -33,3 +33,8 @@
     line-height: 175%;
     color: #333;
   }
+
+  .draggy {
+    border: 1px solid black;
+    display: inline-block;
+  }

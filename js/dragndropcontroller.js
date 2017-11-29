@@ -11,6 +11,7 @@ app.controller("DragNDropController", function($scope){
 
     $scope.handleDragStart = function(e){
         this.style.opacity = '0.4';
+        console.log("dragged obj.innerHTML: " + this.innerHTML);
         e.dataTransfer.setData('text/plain', this.innerHTML);
     };
 
@@ -22,6 +23,11 @@ app.controller("DragNDropController", function($scope){
         e.preventDefault();
         e.stopPropagation();
         var dataText = e.dataTransfer.getData('text/plain');
+        if($scope.items.indexOf(dataText) !== -1)
+        {
+            console.log(dataText + " already exists in collection");
+            return;
+        }
         $scope.items.push(dataText);
         console.log($scope.items);
         $scope.$digest();
