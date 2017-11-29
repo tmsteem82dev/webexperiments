@@ -1,0 +1,49 @@
+<!doctype html>
+
+<html ng-app="tapp">
+
+<head>
+    <title>Angular and JS tests</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/maincontroller.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.css">
+</head>
+
+<body>
+
+    <div ng-controller="MainController">
+        <!-- Top Fixed Menu -->
+        <!-- Top Fixed Menu -->
+       
+        <div class="ui visible inverted  left vertical sidebar menu">
+            <a class="item">Home </a>
+            <a class="item">Page 1</a>
+            <a class="item">Page 2</a>
+        </div>
+
+        <div class="ui top fixed menu">
+            <a class="item menu-trigger">Menu</a>
+            <a class="item">Page 1</a>
+            <a class="item">Page 2</a>
+        </div>
+
+
+        <div class="pusher">
+            <!-- Page Content Here-->
+            <div class="ui basic segment">
+                <div ng-repeat="text in texts" class="ui basic segment">
+                    <h3 class="ui header">Hello there {{text}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
