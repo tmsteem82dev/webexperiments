@@ -13,6 +13,7 @@
 </head>
 
 <body>
+   
 
     <div ng-controller="MainController">
         <!-- Top Fixed Menu -->
@@ -33,7 +34,10 @@
 
         <div class="pusher">
             <!-- Page Content Here-->
-            <div class="ui basic segment">
+            <div class="ui basic segment" style="padding-top: 54px;">
+                    <div ng-show="showdiv">
+                            I am shown!
+                    </div>
                 <div ng-repeat="text in texts" class="ui basic segment">
                     <h3 class="ui header">Hello there {{text}}</h3>
                 </div>

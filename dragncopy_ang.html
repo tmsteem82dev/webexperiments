@@ -8,17 +8,18 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
     <script src="./js/app.js"></script>
+    <script src="./js/maincontroller.js"></script>
     <script src="./js/dragndropcontroller.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.css">
     <link rel="stylesheet" href="./css/drags.css">
 </head>
 
-<body>
-
+<body ng-controller="MainController">
+    <h1>{{title}}</h1>
     <div ng-controller="DragNDropController">
         <div class="container">
             <header>
-                <h1>Draggables</h1>
+                <h1>Filters</h1>
             </header>
             <section>
                 <div draggable="true" ng-repeat="drag_type in drag_types track by $index">{{drag_type.name}}</div>
@@ -26,11 +27,11 @@
                 <div draggable="true" class="draggy">Test1</div>
             </section>
         </div>
-        <div class="container">
+        <div class="container" >
             <header>
-                <h1>Drop Schtuff Here</h1>
+                <h1>News article.nl</h1>
             </header>
-            <section droppable="true">
+            <section droppable="true" id="a">
                 <div>
                     <span>You dragged in: </span>
                     <span ng-repeat="name in items track by $index">
@@ -41,11 +42,30 @@
             </section>
         </div>
 
+        <div class="container" >
+            <header>
+                <h1>Different news Article</h1>
+            </header>
+            <section droppable="true" id="b">
+                <div>
+                    <span>You dragged in: </span>
+                    <span ng-repeat="name in itemsb track by $index">
+                        <span ng-show="$index != 0">,</span>
+                        {{name}}
+                    </span>
+                </div>
+            </section>
+        </div>
+
         <button ng-click='sayHi()'>Say hi!</button>
         <pre>{{items|json}}</pre>
+
+        <div ng-show="showDiv">
+               Hi, I am shown!
+        </div>
     </div>
 
-
+    
 
 
 </body>
