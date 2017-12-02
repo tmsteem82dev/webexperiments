@@ -1,22 +1,22 @@
 /* BASIC STYLINGS
 ============================================================================= */
-body                            { padding-top:20px; }
+body                            { padding-top:20px; background: #f3ddc3; color:rgb(44, 15, 1); }
 pre                             { margin-bottom:20px; }
 
 /* form styling */
 #form-container                { background:#2f2f2f; margin-bottom:20px;
     border-radius:5px; }
-#form-container .page-header   { background:#151515; margin:0; padding:30px; 
-    border-top-left-radius:5px; border-top-right-radius:5px; }
+#form-container .page-header   { background:#d1cece; margin:0; padding:5px; 
+    border-radius:5px; }
 
 /* numbered buttons */
 #status-buttons                 {  }
-#status-buttons a               { color:rgb(0, 0, 0); display:inline-block; font-size:12px; margin-right:10px; text-align:center; text-transform:uppercase; }
+#status-buttons a               { color:rgb(44, 15, 1); display:inline-block; font-size:12px; margin-right:10px; text-align:center; text-transform:uppercase; }
 #status-buttons a:hover         { text-decoration:none; }
 #status-buttons span            { background:#ffffff; display:block; height:30px; margin:0 auto 5px; padding-top:5px; width:30px; 
-    border-radius:50%; border:1.5px solid rgb(194, 229, 243);}
-
-
+    border-radius:50%; border:2px solid rgb(160, 223, 247);}
 
 /* active buttons */
-#status-buttons a.active span   { background:rgb(65, 67, 121); color:white; }
+#status-buttons a.active span   { background:rgb(255, 255, 255); border:2px solid #005096; }
+
+.form-section { padding:10px; border-radius: 5px; background: #d1cece;}
