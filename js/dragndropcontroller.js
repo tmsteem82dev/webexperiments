@@ -8,6 +8,7 @@ app.controller("DragNDropController", function($scope){
     ]
 
     $scope.items = [];
+    $scope.itemsb = [];
 
     $scope.handleDragStart = function(e){
         this.style.opacity = '0.4';
@@ -22,14 +23,31 @@ app.controller("DragNDropController", function($scope){
     $scope.handleDrop = function(e){
         e.preventDefault();
         e.stopPropagation();
+        areaId = angular.element(this).attr('id');
+        console.log("element id: " + areaId);        
         var dataText = e.dataTransfer.getData('text/plain');
-        if($scope.items.indexOf(dataText) !== -1)
-        {
-            console.log(dataText + " already exists in collection");
-            return;
+        
+        
+        if(areaId == "a"){
+            if($scope.items.indexOf(dataText) !== -1)
+            {
+                console.log(dataText + " already exists in collection a");
+                return;
+            }
+            $scope.items.push(dataText);
+            console.log($scope.items);
         }
-        $scope.items.push(dataText);
-        console.log($scope.items);
+
+        if(areaId == "b"){
+            if($scope.itemsb.indexOf(dataText) !== -1)
+            {
+                console.log(dataText + " already exists in collection b");
+                return;
+            }
+            $scope.itemsb.push(dataText);
+            console.log($scope.itemsb);
+        }
+        
         $scope.$digest();
     };
 
@@ -39,7 +57,14 @@ app.controller("DragNDropController", function($scope){
         return false;
     };
 
+    
     $scope.sayHi = function(){
-        alert('Hi!');
+        //alert('Hi!');
+        $scope.showDiv = !$scope.showDiv;
     };
+
+    $scope.showDiv = false;
+    
+
+    
 });

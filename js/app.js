@@ -7,7 +7,7 @@ app.directive('draggable', function () {
             element[0].addEventListener('dragstart', scope.handleDragStart, false);
             element[0].addEventListener('dragend', scope.handleDragEnd, false);
         }
-    }
+    };
 });
 
 app.directive('droppable', function () {
@@ -17,5 +17,5 @@ app.directive('droppable', function () {
             element[0].addEventListener('drop', scope.handleDrop, false);
             element[0].addEventListener('dragover', scope.handleDragOver, false);
         }
-    }
+    };
 });

@@ -1,0 +1,56 @@
+<!doctype html>
+
+<html ng-app="tapp">
+
+<head>
+    <title>Angular test.html</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/maincontroller.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.css">
+</head>
+
+<body ng-controller="MainController">
+
+
+    <div class="ui grid">
+        <div class="four wide column" ng-show="trendsSelected">
+            <div class="ui vertical menu">
+                <div>
+                    <h1>Trends menu</h1>
+                </div>
+                <a class="menu item">Menu item 1</a>
+                <a class="menu item">Menu item 2</a>
+                <a class="menu item">Menu item 3</a>
+            </div>
+        </div>
+
+        <div class="four wide column" ng-show="companySelected">
+            <div class="ui vertical menu">
+                <div>
+                    <h1>Company menu</h1>
+                </div>
+                <a class="menu item">Company item 1</a>
+                <a class="menu item">Company item 2</a>
+                <a class="menu item">Company item 3</a>
+            </div>
+        </div>
+
+        <div class="twelve wide column">
+            <h3 class="ui header">Application Content</h3>
+
+            <button ng-click="selectTrends()" class="ui button">Trends</button><br>
+            <button ng-click="selectCompany()" class="ui button">Company</button>
+            <p>First paragraph...</p>
+            <p>Second paragraph...</p>
+            <p>Third paragraph...</p>
+            <div ng-repeat="text in texts" class="ui basic segment">
+                <h3 class="ui header">Hello there {{text}}</h3>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
