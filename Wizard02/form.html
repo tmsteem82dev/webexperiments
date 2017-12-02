@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <div id="form-container">
+            <div class="page-header text-center">
+                <h2>Please fill in you data</h2>
+
+                <div id="status-buttons" class="text-center">
+                    <a ui-sref-active="active" ui-sref=".profile">
+                        <span>1</span>Profile</a>
+                    <a ui-sref-active="active" ui-sref=".interests">
+                        <span>2</span>Interests</a>
+                    <a ui-sref-active="active" ui-sref=".donate">
+                        <span>3</span>Donate</a>
+                </div>
+            </div>
+            <div class="form-section">
+                <form id="signup-form" ng-submit="processForm()">
+                    <div id="form-views" ui-view></div>
+                </form>
+            </div>
+        </div>
+
+        <pre>
+            {{formData}}
+        </pre>
+    </div>
+</div>
