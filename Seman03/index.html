@@ -1,0 +1,69 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Semantic ui test</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/accordion.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/cardController.js"></script>
+    <script src="./js/filtercontroller.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+    <link rel="stylesheet" href="./css/site.css">
+    <script language='javascript'>
+            $(document).ready(function () {
+                $('.ui.accordion').accordion();
+            });
+        </script>
+</head>
+
+<body ng-app="smApp">
+    <div class="ui raised segment">
+        <div class="ui top fixed menu">            
+            <a href="./accordion.html" class="ui red button">Accordion</a>
+        </div>
+        <div style="margin-top:35px;"><h3 class="ui blue block header" style="width:50%">AGB code aanvragen</h3></div>
+        <div class="ui grid basic segment">
+            <div class="four wide column" ng-controller="FilterController">
+                <!-- filter menu in here -->
+                <div class="ui raised segment customfixed" style="position:fixed; width:21%; 
+                min-width:100px; overflow-y:auto; overflow-x:hidden; top: 115px;  bottom: 40%;">
+                    <h4>Filters</h4>
+                    <hr>
+                    <div class="ui accordion">
+                        <a class="active title">
+                            <i class="dropdown icon"></i>Random buttons
+                        </a>
+                        <div class="active content">
+                            <div ng-repeat="filt in filters" style="margin-bottom: 5px;">
+                                <div class="ui blue button"> {{filt}}</div>
+                            </div>
+                        </div>
+                        <a class="title">
+                                <i class="dropdown icon"></i>Other random buttons
+                            </a>
+                            <div class="content">
+                                <div ng-repeat="filt in filters" style="margin-bottom: 5px;">
+                                    <div class="ui blue button"> {{filt}}</div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="twelve wide column" ng-controller="CardController">
+                <!-- cards in here -->
+                <div ng-include="'./cards.html'"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

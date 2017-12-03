@@ -1,0 +1,21 @@
+<div class="ui link cards">
+    <div class="card" ng-repeat="cardd in cardData track by $index">
+        <div class="image">
+            <img ng-src="{{imgRoot}}/{{cardd.image}}">
+        </div>
+        <div class="content">
+            <a class="header">{{cardd.name}}</a>
+            <div class="meta">
+                <span class="date">Joined in {{cardd.date}}</span>
+            </div>
+            <div class="description">
+                {{cardd.description}}
+            </div>
+        </div>
+        <div class="extra content">
+            <a>
+                <i class="mail outline icon"></i> {{cardd.email}}
+            </a>
+        </div>
+    </div>
+</div>
