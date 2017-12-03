@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Semantic UI test</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+    <script src="./js/app.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+    <link rel="stylesheet" href="./css/site.css">
+
+</head>
+
+<body ng-app="zApp">
+    <div class="ui raised segment signin">
+        <h3 class="ui inverted blue block header">SIGN IN</h3>
+        <div class="ui two column grid basic segment">
+            <div class="column">
+                <div class="ui blue stacked segment">
+                    <div ng-include="'./form.html'"></div>
+                </div>
+            </div>
+            <div style="position:relative; margin:0; padding:0;"><div class="ui vertical divider"> OR </div></div>
+            <div class="center aligned column">
+                <h4 class="ui header">Sign in with:</h4>
+                <div class="ui facebook button">
+                    <i class="facebook icon"></i>
+                    Facebook
+                </div><br><br>
+                <div class="ui google plus button">
+                    <i class="google plus icon"></i>Google+
+                </div>
+            </div>
+        </div>
+        <div class="ui divider"></div>
+        <div class="footer">
+            <div class="text">Not a member?</div>
+            <div class="ui vertical animated blue mini button signup">
+                <div class="visible content">Join us</div>
+                <div class="hidden content">
+                    <i class="users icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
