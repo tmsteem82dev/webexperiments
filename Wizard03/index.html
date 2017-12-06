@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vraag een AGB code aan</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+
+    <script src="./js/app.js"></script>
+    <script src="./js/formcontroller.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+    <link rel="stylesheet" href="./css/site.css">
+</head>
+
+<body ng-app="agbApp">
+    <div class="ui two column centered grid">
+        <div class="four wide column">
+            <div ng-controller="FormController">
+                <h1>{{title}}</h1>              
+
+                <div class="ui bulleted list">
+                        <div ng-repeat="country in countries track by $index" class="item">
+                            {{$index+1}} {{country}}
+                        </div>
+                    </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
