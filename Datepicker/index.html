@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Date Range Picker for Bootstrap</title>
+    <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.12.3/semantic.min.css">
+<link rel="stylesheet" type="text/css" media="all"
+    href="daterangepicker.css" />
+<script type="text/javascript"
+    src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.12.3/semantic.min.js"></script>
+<script type="text/javascript" src="moment.min.js"></script>
+<script type="text/javascript" src="daterangepicker.js"></script>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="container">
+                <h2>Date range picker test.</h2>
+                <input class="form-control" type="text" name="filedate" value="10/12/2017">
+                <div id="beans" style="border: 1px solid red;width:100px;height:50px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(function () {
+            $('input[name="filedate"]').daterangepicker({
+                "singleDatePicker": true,
+                "parentEl": "beans"
+            }, function (start, end, label) {
+                console.log("Newly selected date: " + start.format('YYYY-MM-DD') + ", label: " + label);
+            });
+        });
+    </script>
+</body>
+
+</html>
