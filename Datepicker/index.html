@@ -6,34 +6,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Date Range Picker for Bootstrap</title>
-    <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.12.3/semantic.min.css">
-<link rel="stylesheet" type="text/css" media="all"
-    href="daterangepicker.css" />
-<script type="text/javascript"
-    src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.12.3/semantic.min.js"></script>
-<script type="text/javascript" src="moment.min.js"></script>
-<script type="text/javascript" src="daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+    <link rel="stylesheet" type="text/css" media="all" href="daterangepicker.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+    <script type="text/javascript" src="moment.min.js"></script>
+    <script type="text/javascript" src="daterangepicker.js"></script>
 </head>
 
 <body>
-    <div class="row">
-        <div class="col-sm-8">
-            <div class="container">
-                <h2>Date range picker test.</h2>
-                <input class="form-control" type="text" name="filedate" value="10/12/2017">
-                <div id="beans" style="border: 1px solid red;width:100px;height:50px;"></div>
+    <div class="ui centered grid">
+        <div class="five wide column">
+            <div class="ui form">
+                <div class="field">
+                    <h2>Date range picker test.</h2>
+                    <input type="text" name="filedate" value="10/12/2017">
+                    <div id="beans" style="border: 1px solid red;width:100px;height:50px;"></div>
+                </div>
+                <div>
+                    <a class="item" onclick="$('.modal_fileupload').modal('show');">
+                        <i class="update icon"></i> Upload file
+                    </a>
+                </div>
             </div>
+        </div>
+    </div>
+
+    <div class="ui modal modal_fileupload">
+        <i class="close icon"></i>
+        <div class="header">
+            Upload a File
+        </div>
+        <div class="content">
+            <form id="upload_file" action="/upload" method="POST" enctype="multipart/form-data">
+                <div style="border: 1px solid black;">
+                    <label>
+                        <p>Select a file to upload: </p>
+                    </label>
+                        <input type="file" id="uploaded_file" name="uploaded_file">
+                        <select name="language_code">
+                            <option value="NL" selected>Dutch</option>
+                            <option value="DE">German</option>
+                            <option value="EN">English</option>
+                            <option value="ES">Spanish</option>
+                            <option value="FR">French</option>
+                            <option value="IT">Italian</option>
+                        </select>
+                        <input type="text"  id="cal2" name="filedate" value="10/12/2017">
+                    <div class="ui">
+                        
+                       <!-- <div class="ui calendar" id="example200">
+                            <div class="ui input left icon">
+                                <i class="calendar icon"></i>
+                                <input type="text" placeholder="Date">
+                            </div>
+                        </div>
+                    -->
+                    </div>
+                </div>
+
+
+
+                <!--
+                    <div>
+                        <input type="submit">
+                    </div>
+                    -->
+            </form>
+        </div>
+        <div class="actions">
+            <div class="ui green button" ng-show="feedbackThanks">
+                {{ 'THANK_FOR_INPUT' | translate}}
+            </div>
+            <div>
+                <button form="upload_file" name="upload_button" type="submit" class="ui blue right labeled icon button">
+                    Upload file
+                    <i class="checkmark icon"></i>
+                </button>
+                <div class="ui deny button">
+                    Cancel
+                </div>
+            </div>
+
         </div>
     </div>
 
     <script type="text/javascript">
         $(function () {
+
+            /*$('#example200').calendar({
+                type: 'date'
+            });*/
+
             $('input[name="filedate"]').daterangepicker({
                 "singleDatePicker": true,
-                "parentEl": "beans"
+                "parentEl": ""
             }, function (start, end, label) {
                 console.log("Newly selected date: " + start.format('YYYY-MM-DD') + ", label: " + label);
             });
